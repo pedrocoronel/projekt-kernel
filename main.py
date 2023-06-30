@@ -1,49 +1,59 @@
-import random
 import time
+import os
+from opcao1 import abrir_arquivos
 
-logo = '''
+kernel = '''
   _  _ ____ ____  _   _ ____ _
  | |/ |  __|  _ \| \ | |  __| |
  |   /|  _|| |_) |   | |  _|| |
  |   \| |__|  _ <| |\  | |__| |__
- |_|\_|____|_| \_|_| \_|____|____|
+ |_|\_|____|_| \_|_| \_|____|____| v2.1
 
 '''
+def clear():
+	os.system('cls' if os.name == 'nt' else 'clear')
 
-# logo
-def print_logo():
-	print(logo)
+def logo():
+	print(kernel)
 	time.sleep(1)
 
-# menu
-def exibir_menu():
+def menu():
 	print("Selecione uma opção:")
-	print("1. opção")
-	print("2. opção")
-	print("3. sair")
-
+	print("[1] Intruções")
+	print("[2] ?")
+	print("[0] Sair")
 	escolha = input("Escolha: ")
 	return escolha
 
 def main():
-	print_logo()
 	while True:
-		escolha = exibir_menu()
+		clear()
+		logo()
+		escolha = menu()
 
 		if escolha == "1":
-			print("ação")
+			clear()
+			logo()
+			abrir_arquivos()
+			time.sleep(2)
 
 		elif escolha == "2":
-			print("ação")
+			clear()
+			logo()
+			print("Executando ação para a Opção 2...")
+			time.sleep(2)
 
-		elif escolha == "3":
-			print("ação")
+		elif escolha == "0":
+			clear()
+			logo()
+			print("Saindo do programa...")
+			time.sleep(2)
 			break
 
 		else:
+			clear()
+			logo()
 			print("Opção inválida. Tente novamente.")
-			print("\n")
 
 if __name__ == "__main__":
 	main()
-
