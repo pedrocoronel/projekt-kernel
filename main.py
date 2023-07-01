@@ -1,6 +1,5 @@
 import time
 import os
-from opcao1 import abrir_arquivos
 
 kernel = '''
   _  _ ____ ____  _   _ ____ _
@@ -19,8 +18,7 @@ def logo():
 
 def menu():
 	print("Selecione uma opção:")
-	print("[1] Intruções")
-	print("[2] ?")
+	print("[1] xxxx")
 	print("[0] Sair")
 	escolha = input("Escolha: ")
 	return escolha
@@ -35,12 +33,6 @@ def main():
 			clear()
 			logo()
 			abrir_arquivos()
-			time.sleep(2)
-
-		elif escolha == "2":
-			clear()
-			logo()
-			print("Executando ação para a Opção 2...")
 			time.sleep(2)
 
 		elif escolha == "0":
